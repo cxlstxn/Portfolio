@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finlay Colston</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-gray-950 text-white transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-8 py-4 shadow-lg bg-gray-900 sticky top-0 z-50">
+    <div class="flex-1">
+      <h1 class="text-xl font-bold text-indigo-400">Finlay.dev</h1>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <ul class="flex gap-6 text-sm font-medium">
+        <li><a href="#about" class="hover:text-indigo-400">About</a></li>
+        <li><a href="#projects" class="hover:text-indigo-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-indigo-400">Contact</a></li>
+      </ul>
+    </div>
+    <div class="flex-1"></div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Hi, I'm Finlay</h2>
+    <p class="text-lg md:text-xl max-w-xl text-gray-400">A passionate software engineering student.</p>
+    <a href="#projects" class="mt-6 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold transition">See My Work</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-900 px-6 md:px-16">
+    <h3 class="text-3xl font-bold mb-6 text-indigo-400">About Me</h3>
+    <p class="max-w-3xl text-gray-300 leading-relaxed">
+      I'm a second-year Software Engineering student at the University of Strathclyde. I enjoy building projects that solve real-world problems and experimenting with new technologies. My goal is to build tools that make an impact and become a respected developer in the industry.
+    </p>
+  </section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 px-6 md:px-16">
+  <h3 class="text-3xl font-bold mb-10 text-indigo-400">Projects</h3>
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Project 1 -->
+    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+      <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+        ScotBank
+      </a>
+      <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+          <i class="fab fa-github text-white text-4xl"></i>
+        </div>
+        <div class="carousel w-full h-full">
+          <img src="/img/login.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+          <img src="/img/dashboard.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
+          <img src="/img/admin.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
+        </div>
+      </a>
+      <p class="text-gray-400">A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Java</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Maven</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Jooby</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Handlebars</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">HTML/CSS</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+      <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+        Unix Shell
+      </a>
+      <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+          <i class="fab fa-github text-white text-4xl"></i>
+        </div>
+        <div class="carousel w-full h-full">
+          <img src="/img/shell.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+        </div>
+      </a>
+      <p class="text-gray-400">Unix Shell built in C, built for University.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">C</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Unix</span>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+      <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+        Blackjack Bot
+      </a>
+      <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+          <i class="fab fa-github text-white text-4xl"></i>
+        </div>
+        <div class="carousel w-full h-full">
+          <img src="/img/BlackjackBot.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+        </div>
+      </a>
+      <p class="text-gray-400">A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Python</span>
+        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Discord.py</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Contact / Socials -->
+  <section id="contact" class="py-20 bg-gray-900 px-6 md:px-16">
+    <h3 class="text-3xl font-bold mb-6 text-indigo-400">Let's Connect</h3>
+    <p class="text-gray-300 mb-8">Feel free to reach out on any of these platforms:</p>
+    <div class="flex gap-6 text-3xl text-indigo-400">
+      <a href="https://github.com/cxlstxn" target="_blank" class="hover:text-white transition" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/finlaycolston/" target="_blank" class="hover:text-white transition" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:finlay1colston@gmail.com" class="hover:text-white transition" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 bg-gray-950">
+    © 2025 Finlay Colston. Built with ❤️ and caffeine.
+  </footer>
+
+  <!-- Image Carousel Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousels = document.querySelectorAll(".carousel");
+
+      carousels.forEach((carousel) => {
+        const images = carousel.querySelectorAll(".carousel-img");
+        let current = 0;
+
+        setInterval(() => {
+          images[current].classList.remove("opacity-100");
+          images[current].classList.add("opacity-0");
+
+          current = (current + 1) % images.length;
+
+          images[current].classList.remove("opacity-0");
+          images[current].classList.add("opacity-100");
+        }, 3000);
+      });
+    });
+  </script>
+
+</body>
+</html>
