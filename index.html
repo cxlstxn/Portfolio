@@ -9,7 +9,7 @@
   <style>
     /* Twinkling stars background effect */
     .night {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -22,7 +22,7 @@
     .star {
       position: absolute;
       border-radius: 50%;
-      background-color: white;
+      background-color: rgb(255, 255, 255);
       opacity: 0.8;
       animation: twinkle 4s infinite ease-in-out;
     }
@@ -43,6 +43,21 @@
       height: 3px;
     }
     
+    /* Moon styling */
+    .moon {
+      position: absolute;
+      top: 100px;
+      right: 50px;
+      width: 80px;
+      height: 80px;
+      background-color: #f1f1f1;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset -10px 10px 20px rgba(0, 0, 0, 0.2);
+      z-index: 0;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+    
     @keyframes twinkle {
       0%, 100% {
         opacity: 0.2;
@@ -53,17 +68,48 @@
         transform: scale(1.2);
       }
     }
+    
+    /* Wavy Grid Background for Projects Section */
+    .wavy-grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: -1;
+      opacity: 0.4;
+      transform-origin: center;
+      animation: waveMotion 15s infinite linear;
+    }
+    
+    @keyframes waveMotion {
+      0% {
+        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(0);
+      }
+      50% {
+        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(-10px);
+      }
+      100% {
+        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(0);
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-white transition duration-300">
   <!-- Twinkling stars background -->
   <div class="night">
+    <!-- Moon -->
+    <div class="moon"></div>
     <!-- Stars will be added via JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const night = document.querySelector('.night');
         // Create 100 static stars
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 200; i++) {
           const star = document.createElement('div');
           star.classList.add('star');
           
@@ -104,7 +150,7 @@
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
     <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Hi, I'm Finlay</h2>
     <p class="text-lg md:text-xl max-w-xl text-gray-400">A passionate software engineering student.</p>
-    <a href="#projects" class="mt-6 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold transition">See My Work</a>
+    <a href="#projects" class="mt-6 inline-block bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold transition border border-gray-600 hover:border-gray-500 active:transform active:translate-y-1 active:shadow-inner">See My Work</a>
   </section>
 
   <!-- About -->
@@ -115,84 +161,87 @@
     </p>
   </section>
 
-<!-- Projects -->
-<section id="projects" class="py-20 px-6 md:px-16">
-  <h3 class="text-3xl font-bold mb-10 text-indigo-400">Projects</h3>
-  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-6 md:px-16 relative overflow-hidden">
+    <!-- Wavy Grid Background -->
+    <div class="wavy-grid-bg"></div>
+    
+    <h3 class="text-3xl font-bold mb-10 text-indigo-400 relative z-10">Projects</h3>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
 
-    <!-- Project 1 -->
-    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-      <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-        ScotBank
-      </a>
-      <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-          <i class="fab fa-github text-white text-4xl"></i>
+      <!-- Project 1 -->
+      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+        <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+          ScotBank
+        </a>
+        <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+            <i class="fab fa-github text-white text-4xl"></i>
+          </div>
+          <div class="carousel w-full h-full">
+            <img src="/img/login.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+            <img src="/img/dashboard.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
+            <img src="/img/admin.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
+          </div>
+        </a>
+        <p class="text-gray-400">A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Java</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Maven</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Jooby</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Handlebars</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">HTML/CSS</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Tailwind</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
         </div>
-        <div class="carousel w-full h-full">
-          <img src="/img/login.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-          <img src="/img/dashboard.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
-          <img src="/img/admin.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
-        </div>
-      </a>
-      <p class="text-gray-400">A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Java</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Maven</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Jooby</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Handlebars</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">HTML/CSS</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Tailwind</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
       </div>
-    </div>
 
-    <!-- Project 2 -->
-    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-      <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-        Unix Shell
-      </a>
-      <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-          <i class="fab fa-github text-white text-4xl"></i>
+      <!-- Project 2 -->
+      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+        <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+          Unix Shell
+        </a>
+        <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+            <i class="fab fa-github text-white text-4xl"></i>
+          </div>
+          <div class="carousel w-full h-full">
+            <img src="/img/shell.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+          </div>
+        </a>
+        <p class="text-gray-400">Unix Shell built in C with features like Aliases, History and Child processes, built for University.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">C</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Unix</span>
         </div>
-        <div class="carousel w-full h-full">
-          <img src="/img/shell.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-        </div>
-      </a>
-      <p class="text-gray-400">Unix Shell built in C with features like Aliases, History and Child processes, built for University.</p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">C</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Unix</span>
       </div>
-    </div>
 
-    <!-- Project 3 -->
-    <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-      <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-        Blackjack Bot
-      </a>
-      <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-          <i class="fab fa-github text-white text-4xl"></i>
+      <!-- Project 3 -->
+      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
+        <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
+          Blackjack Bot
+        </a>
+        <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
+            <i class="fab fa-github text-white text-4xl"></i>
+          </div>
+          <div class="carousel w-full h-full">
+            <img src="/img/BlackjackBot.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
+          </div>
+        </a>
+        <p class="text-gray-400">A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Python</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Discord.py</span>
+          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
         </div>
-        <div class="carousel w-full h-full">
-          <img src="/img/BlackjackBot.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-        </div>
-      </a>
-      <p class="text-gray-400">A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Python</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Discord.py</span>
-        <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- Contact / Socials -->
   <section id="contact" class="py-20 bg-gray-900 px-6 md:px-16">
