@@ -1,292 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="/img/cards.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Twinkling stars background effect */
-    .night {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-    
-    /* Twinkling stars */
-    .star {
-      position: absolute;
-      border-radius: 50%;
-      background-color: rgb(255, 255, 255);
-      opacity: 0.8;
-      animation: twinkle 4s infinite ease-in-out;
-    }
-    
-    /* Different sizes for stars */
-    .star-small {
-      width: 1px;
-      height: 1px;
-    }
-    
-    .star-medium {
-      width: 2px;
-      height: 2px;
-    }
-    
-    .star-large {
-      width: 3px;
-      height: 3px;
-    }
-    
-    /* Moon styling */
-    .moon {
-      position: absolute;
-      top: 100px;
-      right: 50px;
-      width: 80px;
-      height: 80px;
-      background-color: #f1f1f1;
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset -10px 10px 20px rgba(0, 0, 0, 0.2);
-      z-index: 0;
-      cursor: pointer;
-      transition: all 0.5s ease;
-    }
-    
-    @keyframes twinkle {
-      0%, 100% {
-        opacity: 0.2;
-        transform: scale(0.8);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-    }
-    
-    /* Wavy Grid Background for Projects Section */
-    .wavy-grid-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
-      background-size: 20px 20px;
-      z-index: -1;
-      opacity: 0.4;
-      transform-origin: center;
-      animation: waveMotion 15s infinite linear;
-    }
-    
-    @keyframes waveMotion {
-      0% {
-        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(0);
-      }
-      50% {
-        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(-10px);
-      }
-      100% {
-        transform: perspective(500px) rotateX(5deg) translateZ(0) translateY(0);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Terminal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-950 text-white transition duration-300">
-  <!-- Twinkling stars background -->
-  <div class="night">
-    <!-- Moon -->
-    <div class="moon"></div>
-    <!-- Stars will be added via JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const night = document.querySelector('.night');
-        // Create 100 static stars
-        for (let i = 0; i < 200; i++) {
-          const star = document.createElement('div');
-          star.classList.add('star');
-          
-          // Random star size
-          const sizeClass = Math.random() < 0.6 ? 'star-small' : 
-                           (Math.random() < 0.85 ? 'star-medium' : 'star-large');
-          star.classList.add(sizeClass);
-          
-          // Random position
-          star.style.left = `${Math.random() * 100}%`;
-          star.style.top = `${Math.random() * 100}%`;
-          
-          // Random animation delay for twinkling effect
-          star.style.animationDelay = `${Math.random() * 5}s`;
-          
-          night.appendChild(star);
-        }
-      });
-    </script>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="flex items-center justify-between px-8 py-4 shadow-lg bg-gray-900 sticky top-0 z-50">
-    <div class="flex-1">
-      <h1 class="text-xl font-bold text-indigo-400">cxlstxn.dev</h1>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <ul class="flex gap-6 text-sm font-medium">
-        <li><a href="#about" class="hover:text-indigo-400">About</a></li>
-        <li><a href="#projects" class="hover:text-indigo-400">Projects</a></li>
-        <li><a href="#contact" class="hover:text-indigo-400">Contact</a></li>
-      </ul>
-    </div>
-    <div class="flex-1"></div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Hi, I'm Finlay</h2>
-    <p class="text-lg md:text-xl max-w-xl text-gray-400">A passionate software engineering student.</p>
-    <a href="#projects" class="mt-6 inline-block bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold transition border border-gray-600 hover:border-gray-500 active:transform active:translate-y-1 active:shadow-inner">See My Work</a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-20 bg-gray-900 px-6 md:px-16">
-    <h3 class="text-3xl font-bold mb-6 text-indigo-400">About Me</h3>
-    <p class="max-w-3xl text-gray-300 leading-relaxed">
-      I'm a second-year Software Engineering student at the University of Strathclyde. I enjoy building projects that solve real-world problems and experimenting with new technologies. My goal is to build tools that make an impact and become a respected developer in the industry.
-    </p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 px-6 md:px-16 relative overflow-hidden">
-    <!-- Wavy Grid Background -->
-    <div class="wavy-grid-bg"></div>
-    
-    <h3 class="text-3xl font-bold mb-10 text-indigo-400 relative z-10">Projects</h3>
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-
-      <!-- Project 1 -->
-      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-        <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-          ScotBank
-        </a>
-        <a href="https://github.com/cxlstxn/Simple-banking" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-            <i class="fab fa-github text-white text-4xl"></i>
-          </div>
-          <div class="carousel w-full h-full">
-            <img src="/img/login.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-            <img src="/img/dashboard.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
-            <img src="/img/admin.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-0">
-          </div>
-        </a>
-        <p class="text-gray-400">A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Java</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Maven</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Jooby</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Handlebars</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">HTML/CSS</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Tailwind</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <p id="typewriter"></p>
+                    <span class="cursor">█</span>
+                </div>
+                <div id="about" class="section hidden">
+                    <h2>ABOUT</h2>
+                    <p>Hi, I'm Finlay Colston, a 3rd year Software Engineering student at the University of Strathclyde. My main interests are in machine learning, neural networks, and building creative web applications. I enjoy exploring how AI can solve real-world problems and have experience with Python, JavaScript, and modern frameworks like React.</p>
+                </div>
+                <div id="projects" class="section hidden">
+                    <h2>PROJECTS</h2>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h3>Scotbank</h3>
+                            <p>A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
+                            <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank">View on GitHub</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Unix Shell</h3>
+                            <p>Unix Shell built in C with features like Aliases, History and Child processes, built for University.</p>
+                            <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank">View on GitHub</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Blackjack Bot</h3>
+                            <p>A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
+                            <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="section hidden">
+                    <h2>CONTACT</h2>
+                    <p>Email: <a href="mailto:finlay1colston@gmail.com" >finlay1colston@gmail.com</a></p>
+                    <p>GitHub: <a href="https://github.com/cxlstxn" target="_blank">https://github.com/cxlstxn</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/finlaycolston/" target="_blank">https://www.linkedin.com/in/finlaycolston</a></p>
+                </div>
+                <div class="command-line">
+                    <p>> <input type="text" id="command" placeholder="Type 'about', 'projects', or 'contact'" autofocus></p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-        <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-          Unix Shell
-        </a>
-        <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-            <i class="fab fa-github text-white text-4xl"></i>
-          </div>
-          <div class="carousel w-full h-full">
-            <img src="/img/shell.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-          </div>
-        </a>
-        <p class="text-gray-400">Unix Shell built in C with features like Aliases, History and Child processes, built for University.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">C</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Unix</span>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="bg-gray-800 rounded-xl p-6 hover:shadow-2xl transition">
-        <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="text-xl font-semibold mb-2 hover:text-indigo-300 transition block">
-          Blackjack Bot
-        </a>
-        <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank" class="relative block group w-full aspect-video mb-6 rounded-lg overflow-hidden">
-          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 z-10"></div>
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition duration-300">
-            <i class="fab fa-github text-white text-4xl"></i>
-          </div>
-          <div class="carousel w-full h-full">
-            <img src="/img/BlackjackBot.jpg" class="carousel-img w-full h-full object-cover absolute transition-opacity duration-500 opacity-100">
-          </div>
-        </a>
-        <p class="text-gray-400">A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Python</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">Discord.py</span>
-          <span class="bg-indigo-900 text-indigo-200 px-3 py-1 text-xs rounded-full">SQL</span>
-        </div>
-      </div>
-
     </div>
-  </section>
-
-  <!-- Contact / Socials -->
-  <section id="contact" class="py-20 bg-gray-900 px-6 md:px-16">
-    <h3 class="text-3xl font-bold mb-6 text-indigo-400">My Contacts</h3>
-    <p class="text-gray-300 mb-8">Feel free to reach out on any of these platforms:</p>
-    <div class="flex gap-6 text-3xl text-indigo-400">
-      <a href="https://github.com/cxlstxn" target="_blank" class="hover:text-white transition" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/finlaycolston/" target="_blank" class="hover:text-white transition" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="mailto:finlay1colston@gmail.com" class="hover:text-white transition" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500 bg-gray-950">
-    2025 Finlay Colston. Built with Tailwind.
-  </footer>
-
-  <!-- Image Carousel Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const carousels = document.querySelectorAll(".carousel");
-
-      carousels.forEach((carousel) => {
-        const images = carousel.querySelectorAll(".carousel-img");
-        let current = 0;
-
-        setInterval(() => {
-          images[current].classList.remove("opacity-100");
-          images[current].classList.add("opacity-0");
-
-          current = (current + 1) % images.length;
-
-          images[current].classList.remove("opacity-0");
-          images[current].classList.add("opacity-100");
-        }, 3000);
-      });
-    });
-  </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
