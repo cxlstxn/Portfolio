@@ -140,6 +140,32 @@ a:hover {
     color: #00aa00;
 }
 
+#snake-section {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+}
+
+#snake-canvas {
+    background: #111;
+    border: 2px solid #0f0;
+    display: block;
+    margin: 0 auto;
+}
+#snake-score {
+    color: #0f0;
+    font-family: 'VT323', monospace;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+#snake-instructions {
+    color: #0f0;
+    font-family: 'VT323', monospace;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .terminal {
@@ -160,3 +186,4 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
