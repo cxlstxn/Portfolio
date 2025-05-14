@@ -104,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = {
         about: document.getElementById('about'),
         projects: document.getElementById('projects'),
-        contact: document.getElementById('contact')
+        contact: document.getElementById('contact'),
+        help: document.getElementById('help')
     };
 
     sections.snake = snakeSection; // Add snake section to the sections object
