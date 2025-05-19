@@ -1,5 +1,4 @@
-
-// SNAKE GAME LOGIC
+// snake game 
 const snakeSection = document.getElementById('snake-section');
 const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
@@ -25,24 +24,24 @@ function drawSnakeGame() {
     ctx.fillStyle = '#111';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw food
+
     ctx.fillStyle = '#0f0';
     ctx.fillRect(food.x * box, food.y * box, box, box);
 
-    // Draw snake
+
     for (let i = 0; i < snake.length; i++) {
         ctx.fillStyle = i === 0 ? '#fff' : '#0f0';
         ctx.fillRect(snake[i].x * box, snake[i].y * box, box, box);
     }
 
-    // Move snake
+
     let head = {x: snake[0].x, y: snake[0].y};
     if (direction === 'LEFT') head.x--;
     if (direction === 'UP') head.y--;
     if (direction === 'RIGHT') head.x++;
     if (direction === 'DOWN') head.y++;
 
-    // Check collision with wall or self
+
     if (
         head.x < 0 || head.x >= 16 ||
         head.y < 0 || head.y >= 16 ||
@@ -84,7 +83,7 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowDown' && direction !== 'UP') direction = 'DOWN';
 });
 
-// Command integration
+
 const commandInput = document.getElementById('command');
 commandInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
@@ -108,8 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         help: document.getElementById('help')
     };
 
-    sections.snake = snakeSection; // Add snake section to the sections object
-    // Typewriter effect
+    sections.snake = snakeSection; 
     const introText = "Welcome to my portfolio! Type 'about', 'projects','contact' or help to navigate.";
     let i = 0;
 
@@ -123,16 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     typeWriter();
 
-    // Command line navigation
     commandInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             const command = commandInput.value.toLowerCase().trim();
             commandInput.value = '';
 
-            // Hide all sections
             Object.values(sections).forEach(section => section.classList.add('hidden'));
 
-            // Show requested section
             if (sections[command]) {
                 sections[command].classList.remove('hidden');
             } else {
