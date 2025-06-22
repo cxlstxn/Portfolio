@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finlay Colston</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="terminal.ico" type="image/x-icon">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +15,6 @@
             <div class="content">
                 <div id="intro">
                     <p id="typewriter"></p>
-                    <span class="cursor">█</span>
                 </div>
                 <div id="about" class="section hidden">
                     <h2>ABOUT</h2>
@@ -24,21 +23,18 @@
                 <div id="projects" class="section hidden">
                     <h2>PROJECTS</h2>
                     <div class="project-grid">
-                        <div class="project-card">
+                        <a class="project-card" href="scotbank.html">
                             <h3>Scotbank</h3>
-                            <p>A Web application built to serve as a bank interface, built for University and JPMorgan.</p>
-                            <a href="https://github.com/cxlstxn/Simple-banking" target="_blank">View on GitHub</a>
-                        </div>
-                        <div class="project-card">
+                            <p>A Web application built to serve as a bank interface, built for University and JPMorgan.</p> 
+                        </a>
+                        <a class="project-card" href="unixshell.html">
                             <h3>Unix Shell</h3>
                             <p>Unix Shell built in C with features like Aliases, History and Child processes, built for University.</p>
-                            <a href="https://github.com/cxlstxn/Unix-Shell" target="_blank">View on GitHub</a>
-                        </div>
-                        <div class="project-card">
+                        </a>
+                        <a class="project-card" href="blackjackbot.html">
                             <h3>Blackjack Bot</h3>
                             <p>A Discord bot built in Python, able to play simple games like blackjack and coinflip.</p>
-                            <a href="https://github.com/cxlstxn/BlackjackBot" target="_blank">View on GitHub</a>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -62,6 +58,10 @@
                     <p>GitHub: <a href="https://github.com/cxlstxn" target="_blank">https://github.com/cxlstxn</a></p>
                     <p>LinkedIn: <a href="https://www.linkedin.com/in/finlaycolston/" target="_blank">https://www.linkedin.com/in/finlaycolston</a></p>
                 </div>
+                <div id="ls" class="section hidden">
+                    <p>scotbank UnixShell BlackjackBot</p>
+                </div>
+
                 <!-- Snake -->
                 <div id="snake-section" class="section">
                     <h2>SNAKE GAME</h2>

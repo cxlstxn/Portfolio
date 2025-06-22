@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Shell</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <h2 id="typewriter"></h2>
+                </div>
+                    <p>As part of the CS210 Systems Programming module at the University of Strathclyde, Me and my team developed a custom shell written in C, designed to replicate functionality of a UNIX command-line terminal. This project provided insight into how operating systems interpret user-commands, how they are processed and given to the os.</p>
+                    <br>
+                    <h3>Some core features of the shell include : </h3>
+                    <br>
+                    <p>- Command Parsing : Implemented a tokenizer to handle user input, parsing commands and arguments with whitespace and special characters in mind.</p>
+                    <br>
+                    <p>- Process Execution : Utilized fork(), execvp(), and waitpid() to support execution of external programs, enabling concurrent command execution and proper child process management.</p>
+                    <br>
+                    <p>- Command history & Aliases : Implemented a history feature to keep track of user commands, allowing for easy retrieval and re-execution. Also supported command aliases for user convenience.</p>
+                    <br>
+                    <p>This project really taught me how important teamwork can be, and how working together can make the workload much more manageable. It also helped me become more comfertable using UNIX and helped push my programming skills to the next level.</p>                    <p>Our team received a grade of 96% for this project.</p>
+                    <br>
+                    <h3>To view the project, please visit the <a href="https://github.com/cxlstxn/Unix-Shell">GitHub Repo</a>.</h3>
+                </div>
+
+                <div class="command-line">
+                    <p style="display: flex; align-items: center; gap: 0.5em; margin: 0;">
+                        <span>/UnixShell/&gt;</span>
+                        <input type="text" id="command" placeholder="Type 'back' to go to root directory" autofocus style="flex: 1; min-width: 0;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projectscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scotbank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <h2 id="typewriter"></h2>
+                </div>
+                    <p>Scotbank is my proudest project to date, developed as part of a university class ran by JPMorgan. Our team was tasked with designing and building a functional banking interface that mimicked real-world systems, combining front-end design with robust back-end logic.</p>
+                    <br>
+                    <p>The front-end of the Scotbank project was built using HTML, CSS, and JavaScript, with a focus on creating a clean, intuitive user interface that mimicked the experience of a real banking app. A combination of css and tailwind was used to create a sleek and user-friendly design. The frontend was able to effectively communicate to the back-end by using the handlebars framework.</p>
+                    <br>
+                    <p>The back-end was built in Java, using tools like Jooby to communicate with the frontend and Maven to handle dependencies and build the project. As well as a Server memory-based SQL database which kept hold of users details. We were also provided api's from the JPMorgan team, all from different formats, XML, JSON and CSV.</p>
+                    <br>
+                    <p>This project really helped me learn how important micro-management can be when working on large scale like this, especially when it comes to coordinating between different people and ensuring that everyone is on the same page.</p>
+                    <br>
+                    <p>Overall, Scotbank was a challenging but rewarding project that taught me a lot about full-stack development, teamwork, and the importance of user experience in software design. It was a great opportunity to apply my skills in a real-world context and learn from industry professionals.</p>
+                    <br>
+
+                    <div class="image-gallery">
+                        <img src="assets/scotbank1.png" alt="Scotbank Screenshot" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/scotbank2.png" alt="Scotbank Screenshot" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/scotbank3.png" alt="Scotbank Screenshot" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                    </div>
+                    <!-- Modal for enlarged image -->
+                    <div id="imgModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;">
+                        <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:2em;color:#fff;cursor:pointer;">&times;</span>
+                        <span id="prevImg" style="position:absolute;top:50%;left:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8592;</span>
+                        <img id="modalImg" src="" alt="Enlarged Screenshot" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+                        <span id="nextImg" style="position:absolute;top:50%;right:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8594;</span>
+                    </div>
+
+                    <h3>To view the project, please visit the <a href="https://github.com/cxlstxn/Simple-banking">GitHub Repo</a>.</h3>
+                </div>
+
+                <div class="command-line" style="position: static;">
+                    <p style="display: flex; align-items: center; gap: 0.5em; margin: 0;">
+                        <span>/scotbank/&gt;</span>
+                        <input type="text" id="command" placeholder="Type 'back' to go to root directory" autofocus style="flex: 1; min-width: 0;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projectscript.js"></script>
+</body>
+</html>

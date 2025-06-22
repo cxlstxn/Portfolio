@@ -100,15 +100,17 @@ commandInput.addEventListener('keydown', function(e) {
 document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter');
     const commandInput = document.getElementById('command');
+    const lsSections = ['unixshell', 'scotbank', 'blackjackbot'];
     const sections = {
         about: document.getElementById('about'),
         projects: document.getElementById('projects'),
         contact: document.getElementById('contact'),
-        help: document.getElementById('help')
+        help: document.getElementById('help'),
+        ls: document.getElementById('ls')
     };
 
     sections.snake = snakeSection; 
-    const introText = "Welcome to my portfolio! Type 'about', 'projects','contact' or help to navigate.";
+    const introText = "Welcome to my portfolio! Type 'about', 'projects','contact' or 'help' to navigate.";
     let i = 0;
 
     function typeWriter() {
@@ -127,8 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
             commandInput.value = '';
 
             Object.values(sections).forEach(section => section.classList.add('hidden'));
+            if (command.startsWith('cd ')) {
 
-            if (sections[command]) {
+                const args = command.split(' ').slice(1);
+                console.log(args);
+                if (lsSections.includes(args[0])) {
+                    document.location.href = `${args[0]}.html`;
+                } else {
+                    typewriterElement.textContent = "Directory not found.";
+                    setTimeout(() => {
+                        typewriterElement.textContent = introText;
+                    }, 2000);
+                }
+            } else if (sections[command]) {
                 sections[command].classList.remove('hidden');
             } else {
                 typewriterElement.textContent = "Invalid command. Try 'about', 'projects', or 'contact'.";
@@ -136,6 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     typewriterElement.textContent = introText;
                 }, 2000);
             }
+        } else if (e.key === 'Tab') {
+            e.preventDefault();
+            const currentValue = commandInput.value.trim().toLowerCase();
+            const parts = currentValue.split(' ');
+            if (parts[0] === 'cd' && parts.length === 2) {
+                const matches = lsSections.filter(section => section.startsWith(parts[1]));
+                if (matches.length === 1) {
+                    commandInput.value = `cd ${matches[0]}`;
+                }
+            }
         }
     });
 });
+

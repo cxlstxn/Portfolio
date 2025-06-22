@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Bot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <h2 id="typewriter"></h2>
+                </div>
+                    <p>My Discord blackjack bot allows users to play blackjack directly within their Discord server. It manages the full game logic, user interactions, and keeps track of each session’s state. The bot is fully coded in Python, utilizing libraries like discord.py for Discord communication and sqlite3 for database management. </p>
+                    <br>
+                    <p>One of the more challenging parts was accurately handling the logic for blackjack, particularly how aces can be worth either 1 or 11 depending on the hand. I’m proud of how the bot interprets and manages card values, player choices, and dealer moves to simulate a realistic blackjack experience. It also includes a coin-flip game where users can put up a set amount of balance and have a 50/50 chance to double it.</p>
+                    <br>
+                    <p>The bot features an interactive user interface using Discord embeds with buttons for actions like Hit or Stick, making it engaging and easy to use. It tracks player data using an in-memory SQL database, allowing users to accumulate money, save stats, and compete on a dynamic leaderboard.</p>
+                    <br>
+                    <div class="image-gallery">
+                        <img src="assets/blackjackbot1.png" alt="Blackjack Bot Screenshot" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/blackjackbot2.png" alt="Blackjack Bot Screenshot" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                    </div>
+                    <!-- Modal for enlarged image -->
+                    <div id="imgModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;">
+                        <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:2em;color:#fff;cursor:pointer;">&times;</span>
+                        <span id="prevImg" style="position:absolute;top:50%;left:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8592;</span>
+                        <img id="modalImg" src="" alt="Enlarged Screenshot" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+                        <span id="nextImg" style="position:absolute;top:50%;right:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8594;</span>
+                    </div>
+                    <br>
+                    <h3>To view the project, please visit the <a href="https://github.com/cxlstxn/BlackjackBot">GitHub Repo</a>.</h3>
+                </div>
+
+                <div class="command-line" style="position: static;">
+                    <p style="display: flex; align-items: center; gap: 0.5em; margin: 0;">
+                        <span>/BlackjackBot/&gt;</span>
+                        <input type="text" id="command" placeholder="Type 'back' to go to root directory" autofocus style="flex: 1; min-width: 0;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projectscript.js"></script>
+</body>
+</html>
