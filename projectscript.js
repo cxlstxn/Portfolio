@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const command = commandInput.value.toLowerCase().trim();
             commandInput.value = '';
             if (command === 'back' || command === 'cd .') {
-                document.location.href = 'index.html';
+                document.location.href = '/';
             }
         }
 
