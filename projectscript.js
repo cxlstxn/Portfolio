@@ -73,11 +73,3 @@ const images = Array.from(document.querySelectorAll('.clickable-img'));
                         currentImgIndex = (currentImgIndex - 1 + images.length) % images.length;
                         document.getElementById('modalImg').src = images[currentImgIndex].src;
                     };
-
-
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-};
-window.onload = function () {
-    window.scrollTo(0, 0);
-};
