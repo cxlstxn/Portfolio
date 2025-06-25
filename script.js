@@ -54,8 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (command === 'whoami') {
                 document.getElementById('sec').classList.remove('hidden');
                 document.getElementById('sec').textContent = 'who do you think you are?';
-            }
-            else if (sections[command]) {
+            } else if (command === 'time' || command === 'date') {
+                const now = new Date();
+                const formattedTime = now.toLocaleTimeString();
+                const formattedDate = now.toLocaleDateString();
+                document.getElementById('sec').classList.remove('hidden');
+                document.getElementById('sec').textContent = `Current time: ${formattedTime}, Date: ${formattedDate}`;
+            } else if (command.startsWith('echo ')) {
+                const message = command.slice(5);
+                document.getElementById('sec').classList.remove('hidden');
+                document.getElementById('sec').textContent = message;
+            } else if (sections[command]) {
                 sections[command].classList.remove('hidden');
             } else {
                 typewriterElement.textContent = "Invalid command. Try 'about', 'projects', or 'contact'.";
