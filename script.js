@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter');
     const commandInput = document.getElementById('command');
-    const lsSections = ['unixshell', 'scotbank', 'blackjackbot'];
+    const lsSections = ['scotbank', 'unixshell', 'blackjackbot'];
     let history = [];
     let historyIndex = 0;
     const sections = {
