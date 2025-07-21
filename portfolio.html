@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <h2 id="typewriter"></h2>
+                </div>
+                    <p>The project you are using right now!</p>
+                    <br>
+                    <p>This project I am unbelievably proud of, I felt as if I needed a portfolio that really just represents me and a boring old webpage from 2002 wasnt going to work. So I got to work creating the html and css for a theme that I have always been fond of, a Retro Terminal.</p>
+                    <br>
+                    <p>It is a simple portfolio that showcases my projects, skills, and experience in a fun and unique way. The terminal interface allows you to navigate through my work as if you were using a command line. Featuring custom commands along with some hidden terminal commands that work on the main page. It was really quite intuitive and fun to work on these outside of coding an actual shell.</p>
+                    <br>
+                    <p>Upon starting this project it really threw me back to my Unix Shell project, working with terminal logic and commands, though obviously quite different as its coded in JS. This project also helped me learn how to work along side web services like AWS and how to host on my own custom domain. </p>
+                    <br>
+                    <p>It was a really fun project to work on, and I hope you enjoy using it as much as I enjoyed creating it. Feel free to explore the project and please if you have any feedback at all dont hesitate to contact me.</p>
+                    <br>
+                    <h3>To view the project, please visit the <a href="https://github.com/cxlstxn/Portfolio">GitHub Repo</a>.</h3>
+                </div>
+
+                <div class="command-line" style="position: static;">
+                    <p style="display: flex; align-items: center; gap: 0.5em; margin: 0;">
+                        <span>/scotbank/&gt;</span>
+                        <input type="text" id="command" placeholder="Type 'back' to go to root directory" autofocus style="flex: 1; min-width: 0;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projectscript.js"></script>
+</body>
+</html>

@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
         introText = "UNIX SHELL";
     } else if (path.includes('blackjackbot')) {
         introText = "BLACKJACK BOT";
-    }  let i = 0;
+    } else if (path.includes('portfolio')) {
+    introText = "PORTFOLIO" ;
+    }  
+    let i = 0;
 
     function typeWriter() {
         if (i < introText.length) {
