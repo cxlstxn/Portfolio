@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arran CVS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/terminal.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="crt">
+        <div class="terminal">
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="intro">
+                    <h2 id="typewriter"></h2>
+                </div>
+                    <p>I had the opportunity to participate in JPMorganChase's Code For Good Hackathon, where our team focused on creating a solution for Arran Community & Voluntary Service. The goal was to strengthen community connections across North Ayrshire by designing and developing an app that helps people discover, share, and engage with local events.</p>
+                    <br>
+                    <p>The front-end of the project was built using React, enabling us to create a dynamic and responsive user interface. The design emphasized simplicity and accessibility, ensuring that users could easily navigate and interact with the app. We worked collaboratively to ensure the UI aligned with the needs of the community.</p>
+                    <br>
+                    <p>The back-end and database were implemented using PocketBase, which provided a lightweight and efficient solution for managing data. This allowed us to store and retrieve event information seamlessly, ensuring the app remained fast and reliable. The integration between the front-end and back-end was a key focus, ensuring smooth communication and data flow.</p>
+                    <br>
+                    <p>Working with my team was an incredible experience. We collaborated closely on the design and development process, leveraging each other's strengths to create a meaningful solution. The teamwork and dedication were instrumental in bringing the project to life.</p>
+                    <br>
+                    <p>We also developed an AI chat powered by a large language model to enhance user engagement. This chatbot is designed to scour the internet for local communities and events based on user requests. By leveraging natural language processing, the chatbot can understand user queries and provide personalized recommendations, making it easier for individuals to connect with relevant groups and activities in their area.</p>
+                    <br>
+                    <p>This project was particularly special to me as it directly impacts my own community in North Ayrshire. It was a rewarding experience to use technology for social good and contribute to something that could foster inclusion and strengthen local connections.</p>
+                    <br>
+
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">PocketBase</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+
+                    <br>
+
+                    <div class="image-gallery">
+                        <img src="assets/cvs1.png" alt="CVS Screenshot 1" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/cvs2.png" alt="CVS Screenshot 2" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/cvs3.png" alt="CVS Screenshot 3" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/cvs4.png" alt="CVS Screenshot 4" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/cvs5.png" alt="CVS Screenshot 3" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                        <img src="assets/cvs6.png" alt="CVS Screenshot 4" class="clickable-img" style="cursor:pointer;max-width:300px;height:auto;">
+                    </div>
+                    <!-- Modal for enlarged image -->
+                    <div id="imgModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;">
+                        <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:2em;color:#fff;cursor:pointer;">&times;</span>
+                        <span id="prevImg" style="position:absolute;top:50%;left:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8592;</span>
+                        <img id="modalImg" src="" alt="Enlarged Screenshot" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+                        <span id="nextImg" style="position:absolute;top:50%;right:30px;transform:translateY(-50%);font-size:3em;color:#fff;cursor:pointer;user-select:none;">&#8594;</span>
+                    </div>
+                    <h3>To view the project, please visit the <a href="https://github.com/glasgow25/Team-10">GitHub Repo</a>.</h3>
+                </div>
+
+                <div class="command-line" style="position: static;">
+                    <p style="display: flex; align-items: center; gap: 0.5em; margin: 0;">
+                        <span>/ArranCVS/&gt;</span>
+                        <input type="text" id="command" placeholder="Type 'back' to go to root directory" autofocus style="flex: 1; min-width: 0;">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projectscript.js"></script>
+</body>
+</html>

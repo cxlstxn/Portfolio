@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     console
     if (path.includes('scotbank')) {
         introText = "SCOTBANK";
+    } else if (path.includes('arrancvs')) {
+        introText = "ARRAN CVS";
     } else if (path.includes('unixshell')) {
         introText = "UNIX SHELL";
     } else if (path.includes('blackjackbot')) {
         introText = "BLACKJACK BOT";
     } else if (path.includes('portfolio')) {
-    introText = "PORTFOLIO" ;
+        introText = "PORTFOLIO";
     }  
     let i = 0;
 
