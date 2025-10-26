@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const typewriterElement = document.getElementById("typewriter");
   const commandInput = document.getElementById("command");
